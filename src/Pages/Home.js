@@ -16,10 +16,11 @@ function Home(){
 
   return (
     <>
-        <div className='container'>
-      <h1>
+         <h1 className='mt-5 mb-5 container d-flex justify-content-center'>
         {count}
       </h1>
+        <div className='container d-flex justify-content-center'>
+ 
       <Btn counterChangher={incrementNum} title="increment"/>
       <Btn counterChangher={decrementNum} title="decrement" />
       </div>
