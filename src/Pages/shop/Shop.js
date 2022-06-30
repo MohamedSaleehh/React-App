@@ -20,7 +20,7 @@ const Shop = () => {
                 products.map((item, i) => {
                     return (
                         <>
-                            <div className='d-flex justify-content-center'>
+                            <div  className='d-flex justify-content-center'>
                                 <Card style={{ width: '25rem' }} >
                                     <Card.Img variant="top" src={item.image} className="h-50" />
                                     <Card.Body>
