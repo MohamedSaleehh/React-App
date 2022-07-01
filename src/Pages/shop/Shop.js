@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+
 const Shop = () => {
 
     useEffect(() => {
@@ -13,14 +14,14 @@ const Shop = () => {
             .then(json => setProducts(json))
     }
     const [products, setProducts] = useState([])
+    
     return (
         <>
 
             {
                 products.map((item, i) => {
                     return (
-                        <>
-                            <div  className='d-flex justify-content-center'>
+                            <div key={i} className='d-flex justify-content-center'>
                                 <Card style={{ width: '25rem' }} >
                                     <Card.Img variant="top" src={item.image} className="h-50" />
                                     <Card.Body>
@@ -28,14 +29,13 @@ const Shop = () => {
                                         <Card.Text>
                                             {item.description}
                                         </Card.Text>
-                                        <Link to={`/product/${item.id}`} key={i} variant="primary" className='d-flex justify-content-center' >
+                                        <Link to={`/product/${item.id}`} variant="primary" className='d-flex justify-content-center' >
                                             View
                                         </Link>
                                     </Card.Body>
                                 </Card>
                             </div>
 
-                        </>
                     )
                 })
             }

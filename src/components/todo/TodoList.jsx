@@ -1,15 +1,15 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import {delTodoAction} from '../../redux/index'
+// import {delTodoAction} from '../../redux/index'
+import {deleteTodo} from '../../redux/features/todoSlice'
 
 
 const TodoList = () => {
 
-  const todos = useSelector(state=>state.todos);
+  const todos = useSelector(state=>state.todos.todos);
   const dispatch = useDispatch()
-
-  const deleteTodo = (id) => {
-    dispatch(delTodoAction(id))
+  const delete_Todo = (id) => {
+    dispatch(deleteTodo(id))
   }
 
   const todosList =
@@ -24,7 +24,7 @@ const TodoList = () => {
             </div>
             </li>
             <div>
-              <a className='btn btn-danger' onClick={()=>deleteTodo(i)}>Remove To-DO</a>
+              <button className='btn btn-danger' onClick={()=>delete_Todo(i)}>Remove To-DO</button>
             </div>
           </ul>
         );
