@@ -7,6 +7,7 @@ import Counter from './Pages/counter';
 import Shop from './Pages/shop/Shop';
 import Product from './Pages/shop/Product';
 import Todo from './Pages/todo/Todo.jsx';
+import Signup from './Pages/signup';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Route path='/shop' element={<Shop/>} />
       <Route path='/product/:id' element={<Product/>} />
       <Route path='/Todo' element={<Todo/>} />
+      <Route path='Signup' element={<Signup />} />
       </Routes>
       </Router>
     </>
