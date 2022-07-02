@@ -120,7 +120,7 @@ const Signup = () => {
             type='password'
             {...register('password', { 
                 required: true,
-                pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+                pattern: /^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([A-Za-z]{2,6}(?:\\.[A-Za-z]{2,6})?)$/
                 })}
           />
             {errors.password && errors.password.type === 'required' && (
